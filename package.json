@@ -4,7 +4,8 @@
   "description": "* SETUP & TOOLS\r  - RESTfull pattern\r  - Express\r  - EJS\r  - MongoDB\r  - Method Override\r  - Sanitize",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,8 @@
     "express-sanitizer": "^1.0.5",
     "method-override": "^3.0.0",
     "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
   }
 }

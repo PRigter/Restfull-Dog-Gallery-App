@@ -1,51 +1,29 @@
 const express = require("express")
-const mongoose = require("mongoose")
+const path = require("path")
 const bodyParser = require("body-parser")
 const expressSanitizer = require("express-sanitizer")
 const methodOverride = require("method-override")
+const Dog = require("./models/dog.js")
+
+// Call for DB Connection
+require("./db/mongoose")
 
 const app = express()
 
+// ENVIROMENT VARIABLES
+const PORT = process.env.PORT
+
+
+// PATH FOR EXPRESS CONFIG
+const publicDirectoryPath = path.join(__dirname, "../public")
+
 // APP CONFIG
 app.set("view engine", "ejs")
+app.use(express.static(publicDirectoryPath))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(expressSanitizer()) // Must be below bodyParser
 app.use(methodOverride("_method")) 
 
-// DB Connection
-mongoose.connect("mongodb://localhost/restfull_dogs_app", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-
-// DB Schema
-const dogSchema = new mongoose.Schema({
-    name: String,
-    breed: String,
-    color: String,
-    age: Number, 
-    about: String
-})
-
-const Dog = mongoose.model("Dog", dogSchema)
-
-
-//* MANUAL DATA - TESTING
-// Dog.create({
-//     name: "Prio",
-//     breed: "Rafeiro",
-//     color: "Brown",
-//     age: 5,
-//     about: "Very sweet and nice dog."
-// })
-
-// Dog.create({
-//     name: "Yoshi",
-//     breed: "Akita",
-//     color: "Caramel",
-//     age: 9,
-//     about: "Big and kind dog."
-// })
 
 // RESTfull ROUTES
 app.get("/", function(req, res) {
@@ -160,7 +138,7 @@ app.delete("/dogs/:id", function(req, res) {
 
 
 
-app.listen(3000, function(req, res) {
-    console.log("Server Up and Running, on Port 3000")
+app.listen(PORT || 3000, function(req, res) {
+    console.log("Server Up and Running, on Port: " + PORT)
 })
 

@@ -7,12 +7,12 @@
 </head>
 <body>
     
-    <h2><%= dog.name %></h2>
+    <h2><%= dog.breed %></h2>
     <ul>
-        <li><%= dog.breed %></li>
-        <li><%= dog.color %></li>
-        <li><%= dog.age %></li>
+        <li><%= dog.image %></li>
+        <li><%= dog.credits %></li>
         <li><%= dog.about %></li>
+        <li><%= dog.created %></li>
     </ul>
     <a href="/dogs/<%= dog._id %>/edit">Edit</a>
     <form id="delete" action="/dogs/<%= dog._id %>?_method=DELETE" method="POST" style="display: inline;">
