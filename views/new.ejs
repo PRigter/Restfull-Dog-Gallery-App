@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/dogs" method="POST">
+        <div class="field">
+            <label for="dog[name]">Dog's Name</label>
+            <input type="text" name="dog[name]" placeholder="Dog's Name">
+        </div>
+        
+        <div class="field">
+            <label for="dog[breed]">Breed</label>
+            <input type="text" name="dog[breed]" placeholder="Dog's Breed">
+        </div>
+
+        <div class="field">
+            <label for="dog[color]">Color</label>
+            <input type="text" name="dog[color]" placeholder="Dog's Color">
+        </div>
+
+        <div class="field">
+            <label for="dog[age]">Age</label>
+            <input type="text" name="dog[age]" placeholder="Dog's Age">
+        </div>
+
+        <div class="field">
+            <label for="dog[about]">About</label>
+            <textarea name="dog[about]" id="dog-about" cols="20" rows="10" placeholder="Dog's About" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+</body>
+</html>

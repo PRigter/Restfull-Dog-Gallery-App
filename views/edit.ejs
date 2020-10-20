@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/dogs/<%= dog._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label for="dog[name]">Dog's Name</label>
+            <input type="text" name="dog[name]" value="<%= dog.name %>">
+        </div>
+        
+        <div class="field">
+            <label for="dog[breed]"><%= dog.breed %></label>
+            <input type="text" name="dog[breed]" value="<%= dog.breed %>">
+        </div>
+
+        <div class="field">
+            <label for="dog[color]">Color</label>
+            <input type="text" name="dog[color]" value="<%= dog.color %>">
+        </div>
+
+        <div class="field">
+            <label for="dog[age]">Age</label>
+            <input type="text" name="dog[age]" value="<%= dog.age %>">
+        </div>
+
+        <div class="field">
+            <label for="dog[about]">About</label>
+            <textarea name="dog[about]" id="dog-about" cols="20" rows="10" required><%= dog.about %></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogs Gallery</title>
+</head>
+<body>
+
+    <h1>Dogs Gallery</h1>
+    <p>
+        <a href="/dogs/new">Add New Dog</a>
+    </p>
+
+    <p>First Dog</p>
+    <ul>
+        <li>Dog Name</li>
+        <li>Dog breed</li>
+        <li>Dog color</li>
+        <li>Dog Age</li>
+    </ul>
+    <p>
+        <a href="/dogs/123">Read More</a> 
+    </p>
+
+    <% dogs.forEach(function(dog) { %>
+        <h2><%= dog.name %></h2>
+        <ul>
+            <li><%= dog.breed %></li>
+            <li><%= dog.color %></li>
+            <li><%= dog.age %></li>
+            <li><%= dog.about %></li>
+        </ul>
+            
+        <a href="/dogs/<%= dog._id %>">
+            Read More
+            <i class="right chevron icon"></i>
+        </a>
+        
+    <% }) %>
+
+</body>
+</html>

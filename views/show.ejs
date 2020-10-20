@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2><%= dog.name %></h2>
+    <ul>
+        <li><%= dog.breed %></li>
+        <li><%= dog.color %></li>
+        <li><%= dog.age %></li>
+        <li><%= dog.about %></li>
+    </ul>
+    <a href="/dogs/<%= dog._id %>/edit">Edit</a>
+    <form id="delete" action="/dogs/<%= dog._id %>?_method=DELETE" method="POST" style="display: inline;">
+        <button type="submit">Delete</button>
+    </form>
+    
+
+    <p>
+        <a href="/">Go Back</a>
+    </p>
+    
+</body>
+</html>
