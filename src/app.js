@@ -102,6 +102,8 @@ app.get("/dogs/:id/edit", function(req, res) {
 
 // UPDATE ROUTE
 app.put("/dogs/:id", function(req, res) {
+    
+    req.body.dog.about = req.sanitize(req.body.dog.about)
     const dogId = req.params.id
 
     Dog.findByIdAndUpdate(dogId, req.body.dog, function(err, foundDog) {
