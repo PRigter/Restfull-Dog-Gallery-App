@@ -1,56 +1,41 @@
 <%- include("partials/header.ejs") %>
 
-        
-    <div class="ui container">
-        <div class="ui stackable grid show-grid">
-            
-            <div class="column two wide">
-                <div class="back-arrow">
-                    <a class="button" href="/dogs">
-                        <i class="arrow alternate circle left icon"></i>
-                        <span class="back-btn">Go Back</span>
-                    </a>    
-                </div>
-            </div>
-
-            <div class="column ten wide main-show-card">
-                <div class="show-container ui segment">
-
-                    <div class="item-img">
-                        <img class="ui image" src="<%= dog.image %>" alt="">
-                    </div>
-
-                    <div class="show-item-content">                   
-                        <h2 class="item-title"><%= dog.breed %></h2>
-                        <p><%= dog.about %></p>
-                    </div>
-                    
-                    <div class="show-item-createdAt">                   
-                        <p class="item-createdAt"> Created At: <%= dog.created.toLocaleString() %></p>
-                    </div>
-
-                    <div class="show-item-credits">                   
-                        <p class="item-credits-title">Photo by: <%= dog.credits %></p>
-                    </div>
-                </div>
-
-                <div class="show-item-buttons-container">
-                    <a class="ui primary button" href="/dogs/<%= dog._id %>/edit">Edit</a>
-                    <form id="delete" action="/dogs/<%= dog._id %>?_method=DELETE" method="POST">
-                        <button class="ui negative button">Delete</button>
-                    </form>
-                </div>
-
+<div class="ui container">
+    <div class="ui stackable grid show-grid">
+        <div class="column two wide">
+            <div class="back-arrow">
+                <a class="button" href="/dogs">
+                    <i class="arrow alternate circle left icon"></i>
+                    <span class="back-btn">Go Back</span>
+                </a>    
             </div>
         </div>
-
-        
-        
-
+        <div class="column ten wide main-show-card">
+            <div class="show-container ui segment">
+                <div class="item-img">
+                    <img class="ui image" src="<%= dog.image %>" alt="">
+                </div>
+                <div class="show-item-content">                   
+                    <h2 class="item-title"><%= dog.breed %></h2>
+                    <p><%= dog.about %></p>
+                </div>
+                <div class="show-item-createdAt">                   
+                    <p class="item-createdAt"> Created At: <%= dog.created.toLocaleString() %></p>
+                </div>
+                <div class="show-item-credits">                   
+                    <p class="item-credits-title">Photo by: <%= dog.credits %></p>
+                </div>
+            </div>
+            <div class="show-item-buttons-container">
+                <a class="ui primary button" href="/dogs/<%= dog._id %>/edit">Edit</a>
+                <form id="delete" action="/dogs/<%= dog._id %>?_method=DELETE" method="POST">
+                    <button class="ui negative button">Delete</button>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
 
         
-
-
 
 <%- include("partials/footer.ejs") %>

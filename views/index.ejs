@@ -10,40 +10,27 @@
 
     <a class="ui primary button large" href="/dogs/new">Add New Dog <i class="plus square outline icon"></i></a>
 
-
     <section class="ui grid" id="main-content">
-        
-
-        
         <% dogs.forEach(function(dog) { %>
             <div class="column four wide">
                 <div class="ui segment card">
                     <div class="item-img">
                         <img class="ui image" src="<%= dog.image %>" alt="">
                     </div>
-
                     <div class="item-content">
                         <h2 class="item-title"><%= dog.breed %></h2>
                         <p><%= dog.about.substring(0, 100) %> ... </p>
-                        
                         <div class="item-extra">   
                             <a href="/dogs/<%= dog._id %>">
                                 Read More
                                 <i class="right chevron icon"></i>
                             </a>
                         </div>
-
                     </div>
-                    
-            
                 </div>
             </div>
         <% }) %>
-        
-
     </section>
-
-
 </div>
 
 <%- include("partials/footer.ejs") %>

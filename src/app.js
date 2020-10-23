@@ -42,7 +42,6 @@ app.get("/dogs", function(req, res) {
             res.render("index", {dogs: dogs})
         }
     })
-
 })
 
 
@@ -66,7 +65,6 @@ app.post("/dogs", function(req, res){
             res.redirect("/dogs")
         }
     })
-
 })
 
 
@@ -113,9 +111,7 @@ app.put("/dogs/:id", function(req, res) {
             res.redirect("/dogs/" + req.params.id)
         }
     })
-    
 })
-
 
 
 // DELETE ROUTE
@@ -126,17 +122,12 @@ app.delete("/dogs/:id", function(req, res) {
         if (err) {
             res.redirect("/dogs")
         } else {
-            console.log(dogId + " deleted")
             console.log("================")
             console.log(data + " deleted")
             res.redirect("/dogs")
         }
     })
-
 })
-
-
-
 
 
 

@@ -16,13 +16,6 @@
 
 ================================================
 
-Next Steps:
-    - Integrate SEMANTIC UI
-        - Add Menus / Cards
-
-
-================================================
-
 # CREDITS
 
 * AKITA Photo - https://unsplash.com/photos/HpVgq2BIjbw

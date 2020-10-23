@@ -12,25 +12,6 @@ const dogSchema = new mongoose.Schema({
 const Dog = mongoose.model("Dog", dogSchema)
 
 
-//* MANUAL DATA - TESTING
-// Dog.create({
-//     breed: "Akita",
-//     image: 
-//     about: "Very sweet and nice dog."
-// })
-
-// Dog.create({
-//     name: "Yoshi",
-//     breed: "Akita",
-//     color: "Caramel",
-//     age: 9,
-//     about: "Big and kind dog."
-// })
-
-
-
-
-
 
 
 module.exports = Dog

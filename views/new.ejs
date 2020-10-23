@@ -1,34 +1,29 @@
 <%- include("partials/header.ejs") %>
 
-    <div class="ui container">
-        <div class="form-container ui segment">
-            <form class="ui form" action="/dogs" method="POST">
-                <div class="field">
-                  <label for="dog[breed]"">Dog's Breed</label>
-                  <input type="text" name="dog[breed]" placeholder="Dog's Breed">
-                </div>
-                <div class="field">
-                  <label for="dog[image]">Dog's Photo</label>
-                  <input type="text" name="dog[image]" placeholder="Dog's Photo">
-                </div>
-
-                <div class="field">
-                    <label for="dog[credits]">Photo Credits</label>
-                    <input type="text" name="dog[credits]" placeholder="Photo Credits">
-                </div>
-
-                <div class="field">
-                <label for="dog[about]">Dog's Breed About</label>
-                <textarea name="dog[about]" id="dog-about" placeholder="Dog's Breed Info" required></textarea>
-                </div>
-                
-                <button class="ui primary button" type="submit">Submit</button>
-                <a href="/dogs" class="ui negative button">Cancel</a>
-              </form>
-        </div>
-
-        
-    </div>
+<div class="ui container">
+    <div class="form-container ui segment">
+        <form class="ui form" action="/dogs" method="POST">
+            <div class="field">
+              <label for="dog[breed]"">Dog's Breed</label>
+              <input type="text" name="dog[breed]" placeholder="Dog's Breed">
+            </div>
+            <div class="field">
+              <label for="dog[image]">Dog's Photo</label>
+              <input type="text" name="dog[image]" placeholder="Dog's Photo">
+            </div>
+            <div class="field">
+                <label for="dog[credits]">Photo Credits</label>
+                <input type="text" name="dog[credits]" placeholder="Photo Credits">
+            </div>
+            <div class="field">
+            <label for="dog[about]">Dog's Breed About</label>
+            <textarea name="dog[about]" id="dog-about" placeholder="Dog's Breed Info" required></textarea>
+            </div>
+            <button class="ui primary button" type="submit">Submit</button>
+            <a href="/dogs" class="ui negative button">Cancel</a>
+          </form>
+    </div> 
+</div>
 
 
 <%- include("partials/footer.ejs") %>
