@@ -2,7 +2,7 @@ body {
     background-color: #FFFFFF;
 }
 body #fonts {
-    font-family: "Piazzolla", Helvetica, sans-serif;
+    font-family: 'Piazzolla', serif;
 }
 .top-bar {
     justify-content: center;
@@ -21,15 +21,15 @@ i {
     margin-top: 20px;
     margin-bottom: 30px;
 }
-.thumbnail {
-    border: 2px solid black;
+.ui.grid > .row > .column {
+    margin-bottom: 25px;
 }
 .item-content {
     height: 190px;
     margin-top: 16px;
     text-align: center;
 }
-.ui.image {
+.ui.image.thumbnail {
     height: 182px;
     max-width: 273px;
     width: 100%;
@@ -78,4 +78,17 @@ i {
 }
 .main-show-card {
     margin: auto;
+}
+
+
+
+/* ========== */
+.ui.grid.grid-test-container {
+    margin-bottom: 40px;
+}
+
+
+.grid-test {
+    background-color: lightgray;
+    border: 1px solid purple;
 }

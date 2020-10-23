@@ -11,11 +11,12 @@
     <a class="ui primary button large" href="/dogs/new">Add New Dog <i class="plus square outline icon"></i></a>
 
     <section class="ui grid" id="main-content">
+        <div class="doubling stackable four column row wide">
         <% dogs.forEach(function(dog) { %>
-            <div class="column four wide">
+            <div class="column main-card">
                 <div class="ui segment card">
                     <div class="item-img">
-                        <img class="ui image" src="<%= dog.image %>" alt="">
+                        <img class="ui image thumbnail" src="<%= dog.image %>" alt="">
                     </div>
                     <div class="item-content">
                         <h2 class="item-title"><%= dog.breed %></h2>
@@ -30,7 +31,12 @@
                 </div>
             </div>
         <% }) %>
+        </div>
     </section>
+
+
+
+
 </div>
 
 <%- include("partials/footer.ejs") %>
