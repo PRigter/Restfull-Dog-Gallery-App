@@ -17,8 +17,6 @@
 ================================================
 
 Next Steps:
-    - Redo - Index / New / All the views basically...
-    - Add partials
     - Integrate SEMANTIC UI
         - Add Menus / Cards
 
