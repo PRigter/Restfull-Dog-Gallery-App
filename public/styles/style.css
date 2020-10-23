@@ -43,6 +43,13 @@ i {
     text-align: center;
 }
 
+.ui.image {
+    height: 182px;
+    max-width: 273px;
+    width: 100%;
+
+}
+
 .item-title {
     text-align: center;
 }
