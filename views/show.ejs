@@ -1,28 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h2><%= dog.breed %></h2>
-    <ul>
-        <li><%= dog.image %></li>
-        <li><%= dog.credits %></li>
-        <li><%= dog.about %></li>
-        <li><%= dog.created %></li>
-    </ul>
-    <a href="/dogs/<%= dog._id %>/edit">Edit</a>
-    <form id="delete" action="/dogs/<%= dog._id %>?_method=DELETE" method="POST" style="display: inline;">
-        <button type="submit">Delete</button>
-    </form>
-    
+<%- include("partials/header.ejs") %>
 
-    <p>
-        <a href="/">Go Back</a>
-    </p>
-    
-</body>
-</html>
+        
+    <div class="ui container">
+        <div class="ui stackable grid show-grid">
+            
+            <div class="column two wide">
+                <div class="back-arrow">
+                    <a class="button" href="/dogs">
+                        <i class="arrow alternate circle left icon"></i>
+                        <span class="back-btn">Go Back</span>
+                    </a>    
+                </div>
+            </div>
+
+            <div class="column ten wide">
+                <div class="show-container ui segment">
+
+                    <div class="item-img">
+                        <img class="ui image" src="https://images.unsplash.com/photo-1580064755419-883acc42900b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
+                    </div>
+
+                    <div class="show-item-content">                   
+                        <h2 class="item-title"><%= dog.breed %></h2>
+                        <p><%= dog.about %></p>
+                    </div>
+                    
+                    <div class="show-item-createdAt">                   
+                        <p class="item-createdAt"> Created At: <%= dog.created %></p>
+                    </div>
+
+                    <div class="show-item-credits">                   
+                        <p class="item-credits-title">Photo by: <%= dog.credits %></p>
+                    </div>
+                </div>
+
+                <div class="show-item-buttons-container">
+                    <a class="ui primary button" href="/dogs/<%= dog._id %>/edit">Edit</a>
+                    <form id="delete" action="/dogs/<%= dog._id %>?_method=DELETE" method="POST">
+                        <button class="ui negative button">Delete</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        
+        
+
+    </div>
+
+        
+
+
+
+<%- include("partials/footer.ejs") %>

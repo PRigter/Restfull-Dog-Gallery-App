@@ -14,7 +14,13 @@
 2 - Mongoose Connection + Model Schema
 3 - Express Static Directory + Enviroment Variables
 
+================================================
 
+Next Steps:
+    - Redo - Index / New / All the views basically...
+    - Add partials
+    - Integrate SEMANTIC UI
+        - Add Menus / Cards
 
 
 ================================================

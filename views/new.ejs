@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+<%- include("partials/header.ejs") %>
+
     <form action="/dogs" method="POST">      
         <div class="field">
             <label for="dog[breed]">Breed</label>
@@ -32,6 +25,4 @@
     </form>
 
 
-
-</body>
-</html>
+<%- include("partials/footer.ejs") %>
