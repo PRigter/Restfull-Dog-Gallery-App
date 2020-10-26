@@ -6,7 +6,7 @@ const methodOverride = require("method-override")
 const Dog = require("./models/dog")
 const User = require("./models/user")
 const bcrypt = require("bcrypt")
-const auth = require("./middleware/auth")
+const sessionValidation = require("./middleware/auth") // request for the middleware
 const session = require("express-session")
 
 // Call for DB Connection
@@ -57,12 +57,10 @@ app.get("/dogs", function(req, res) {
 
 // NEW ROUTE 
     //* Note: Must be above SHOW ROUTE
-app.get("/dogs/new", function(req, res) {
+app.get("/dogs/new", sessionValidation, function(req, res) {
     
-    // Restricted Route - Verify first id Session is still valid
-    if (!req.session.user_id) {
-        return res.redirect("/dogs/login")
-    }
+    // Restricted Route - Verify first id Session is still valid -- Now with middleware
+    
     
     res.render("new")
 })
@@ -129,12 +127,9 @@ app.get("/dogs/:id", function(req, res) {
 
 
 // EDIT ROUTE
-app.get("/dogs/:id/edit", function(req, res) {
+app.get("/dogs/:id/edit", sessionValidation, function(req, res) {
     
-    // Restricted Route - Verify first id Session is still valid
-    if (!req.session.user_id) {
-        return res.redirect("/dogs/login")
-    }
+    // Restricted Route - Verify first id Session is still valid -- Now with middleware
 
     Dog.findById(req.params.id, function(err, foundDog) {
         if (err) {
@@ -148,10 +143,6 @@ app.get("/dogs/:id/edit", function(req, res) {
 
 // UPDATE ROUTE
 app.put("/dogs/:id", function(req, res) {
-
-    if (!req.session.user_id) {
-        return res.redirect("/dogs/login")
-    }
     
     req.body.dog.about = req.sanitize(req.body.dog.about)
     const dogId = req.params.id
@@ -167,11 +158,7 @@ app.put("/dogs/:id", function(req, res) {
 
 
 // DELETE ROUTE
-app.delete("/dogs/:id", function(req, res) {
-
-    if (!req.session.user_id) {
-        return res.redirect("/dogs/login")
-    }
+app.delete("/dogs/:id", sessionValidation, function(req, res) {
 
     const dogId = req.params.id
     

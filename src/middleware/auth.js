@@ -1,26 +1,16 @@
+const session = require("express-session")
 
-
-function auth(req, res, next) {
-
-    res.redirect("/dogs/login")    
-    const userPass = req.body.password
-    // const userPass = "CarameloVerde@2020*!"
-    // const userPass = 2
-    console.log("Middleware being used")
-    console.log(userPass)
-    console.log(typeof userPass)
-    console.log(process.env.APP_AUTH)
-    console.log(typeof process.env.APP_AUTH)
-
-    if (userPass !== process.env.APP_AUTH) {
-        res.status(403).redirect("/dogs")
-        
-    } else if (userPass === process.env.APP_AUTH)  {
-        next()
+const sessionValidation = (req, res, next) => {
+    // Using req.session to validate if login was made and session is still valid
+    // If there is no req.session.user_id --> redirect to login page
+    if (!req.session.user_id) {
+        return res.redirect("/dogs/login")        
     }
 
+    // Otherwise, proceed with the protected route --> next()
+    next()
 
 }
 
 
-module.exports = auth
+module.exports = sessionValidation
