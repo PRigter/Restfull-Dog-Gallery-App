@@ -1,5 +1,4 @@
 const  mongoose = require("mongoose")
-const bcrypt = require("bcrypt")
 
 
 // User Schema - Email, username & passport
@@ -19,6 +18,8 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema)
 
+
+module.exports = User
 
 // App User
 // User.create({
