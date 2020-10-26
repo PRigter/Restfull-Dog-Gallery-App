@@ -81,14 +81,7 @@ i {
 }
 
 
-
-/* ========== */
-.ui.grid.grid-test-container {
-    margin-bottom: 40px;
-}
-
-
-.grid-test {
-    background-color: lightgray;
-    border: 1px solid purple;
+.login-header-container {
+    max-width: 600px;
+    margin: 0 auto;  
 }

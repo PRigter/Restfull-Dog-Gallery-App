@@ -3,7 +3,9 @@ const path = require("path")
 const bodyParser = require("body-parser")
 const expressSanitizer = require("express-sanitizer")
 const methodOverride = require("method-override")
-const Dog = require("./models/dog.js")
+const Dog = require("./models/dog")
+const User = require("./models/user")
+const auth = require("./middleware/auth")
 
 // Call for DB Connection
 require("./db/mongoose")
@@ -12,6 +14,8 @@ const app = express()
 
 // ENVIROMENT VARIABLES
 const PORT = process.env.PORT
+
+
 
 
 // PATH FOR EXPRESS CONFIG
@@ -53,7 +57,7 @@ app.get("/dogs/new", function(req, res) {
 
 
 // CREATE ROUTE
-app.post("/dogs", function(req, res){
+app.post("/dogs", auth, function(req, res){
 
     // Sanitize Input text-area -- shoud be created as Middleware
     req.body.dog.about = req.sanitize(req.body.dog.about)
@@ -66,6 +70,21 @@ app.post("/dogs", function(req, res){
         }
     })
 })
+
+
+// LOGIN ROUTE
+app.get("/dogs/login", function(req, res) {
+    res.render("login")
+})
+
+app.post("/dogs/login", function(req, res) {
+    res.sendStatus(300)
+})
+
+
+
+
+
 
 
 //SHOW ROUTE
@@ -128,6 +147,9 @@ app.delete("/dogs/:id", function(req, res) {
         }
     })
 })
+
+
+
 
 
 

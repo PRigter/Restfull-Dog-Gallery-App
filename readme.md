@@ -14,6 +14,19 @@
 2 - Mongoose Connection + Model Schema
 3 - Express Static Directory + Enviroment Variables
 
+Next Steps:
+- Criar modelo para o User
+- Criar as Routes:
+    - Login
+- Autentificação
+    - Validar o login com bcypt e comparar a hash da password submetida com a que está na db
+- Sessão Ativa
+    - Implementar express-session 
+        - No Login addicionar o user._id à sessão
+        - Na route protegida, verificar se a sessão está ativa
+- Criar Route - Log Out
+
+
 ================================================
 
 # CREDITS
