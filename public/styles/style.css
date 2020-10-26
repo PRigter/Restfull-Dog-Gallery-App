@@ -74,7 +74,7 @@ i {
 }
 .ui.segment.form-container {
     max-width: 600px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .main-show-card {
     margin: auto;
@@ -84,4 +84,10 @@ i {
 .login-header-container {
     max-width: 600px;
     margin: 0 auto;  
+}
+
+.logout-form-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
 }

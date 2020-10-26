@@ -116,7 +116,6 @@ app.post("/dogs/login", async function(req, res) {
 app.get("/dogs/:id", function(req, res) {
     // Get req params id
     const dogId = req.params.id
-    console.log(dogId)
     
     // Find Specific ID in DB, and Send it to Page
     Dog.findById(dogId, function(err, foundDog) {
@@ -144,7 +143,6 @@ app.get("/dogs/:id/edit", function(req, res) {
             res.render("edit", {dog: foundDog})
         }
     })
-    
 })
 
 
@@ -186,6 +184,14 @@ app.delete("/dogs/:id", function(req, res) {
             res.redirect("/dogs")
         }
     })
+})
+
+
+// LOG OUT ROUTE
+app.post("/dogs/logout", (req, res) => {
+    // Remove Session ID from req.session.user_id
+    req.session.user_id = null
+    res.redirect("/dogs")
 })
 
 
