@@ -5,7 +5,6 @@ const expressSanitizer = require("express-sanitizer")
 const methodOverride = require("method-override")
 const Dog = require("./models/dog")
 const User = require("./models/user")
-const bcrypt = require("bcrypt")
 const sessionValidation = require("./middleware/auth") // request for the middleware
 const session = require("express-session")
 
@@ -60,8 +59,6 @@ app.get("/dogs", function(req, res) {
 app.get("/dogs/new", sessionValidation, function(req, res) {
     
     // Restricted Route - Verify first id Session is still valid -- Now with middleware
-    
-    
     res.render("new")
 })
 

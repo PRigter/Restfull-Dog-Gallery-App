@@ -19,7 +19,6 @@ const userSchema = new mongoose.Schema({
 })
 
 
-
 // Refactoring to Model Methods --> A method to serve LOGIN ROUTE
     // 1- Find the user on DB
     // 2 - Compare the password with then hash version on DB
@@ -34,7 +33,7 @@ userSchema.statics.findAndValidate = async function (username, password) {
 }
 
 
-
+// User Method in case of registering New Users, first their instance will HASH the Password, before saving
 userSchema.pre("save", async function(next) {
     this.password = await bcrypt.hash(this.password, 12)
     next()
@@ -42,20 +41,6 @@ userSchema.pre("save", async function(next) {
 
 
 
-
-
 const User = mongoose.model("User", userSchema)
 
 module.exports = User
-
-// App User
-// User.create({
-//     username: process.env.USERNAME,
-//     password: process.env.PASSWORD
-// }, function(err, user) {
-//     if (err) {
-//         console.log(err)
-//     } else {
-//         console.log("User created and saved")
-//     }
-// })

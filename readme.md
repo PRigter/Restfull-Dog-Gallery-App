@@ -7,6 +7,8 @@
  - MongoDB
  - Method Override
  - Sanitize
+ - Bcrypt
+ - Express-Session
 
 ================================================
 
