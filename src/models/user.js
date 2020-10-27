@@ -34,10 +34,10 @@ userSchema.statics.findAndValidate = async function (username, password) {
 
 
 // User Method in case of registering New Users, first their instance will HASH the Password, before saving
-userSchema.pre("save", async function(next) {
-    this.password = await bcrypt.hash(this.password, 12)
-    next()
-})
+// userSchema.pre("save", async function(next) {
+//     this.password = await bcrypt.hash(this.password, 12)
+//     next()
+// })
 
 
 
