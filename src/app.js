@@ -91,15 +91,12 @@ app.get("/dogs/login", function(req, res) {
 // Handle Login - Authentication
 app.post("/dogs/login", async function(req, res) {
     const password = req.body.password
-    // Finds User on DB (using our enviroment variable for testing)
-    const user = await User.findOne({ username: USERNAME })
-    
-    // Password validation - Using Bcrypt
-    const validPass =  await bcrypt.compare(password, user.password)
 
-    if (validPass) {
+    const foundUser = await User.findAndValidate(USERNAME, password)
+
+    if (foundUser) {
         // Adding Session to validate that user is still logged in on this session - Using npm -> express-session
-        req.session.user_id = user._id
+        req.session.user_id = foundUser._id
         res.redirect("/dogs")
     } else {
         res.redirect("/dogs/login")
